@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MuscleTopEuro | Performance Nutrition</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f7f7f5;
+color:#111;
+}
+a{text-decoration:none;color:inherit}
+header{
+background:#111;
+color:#fff;
+position:sticky;
+top:0;
+z-index:20;
+}
+.top{
+background:#dfff00;
+color:#111;
+text-align:center;
+padding:9px;
+font-size:12px;
+font-weight:700;
+letter-spacing:.5px;
+}
+.nav{
+height:72px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+max-width:1200px;
+margin:auto;
+}
+.logo{
+font-size:22px;
+font-weight:900;
+letter-spacing:-1px;
+}
+.logo span{color:#dfff00}
+.menu{
+display:flex;
+gap:25px;
+font-size:14px;
+font-weight:700;
+}
+.icons{display:flex;gap:10px}
+.icon{
+width:40px;height:40px;
+border:1px solid #444;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.hero{
+background:#111;
+color:#fff;
+padding:65px 20px 75px;
+}
+.hero-inner{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:40px;
+align-items:center;
+}
+.badge{
+display:inline-block;
+background:#dfff00;
+color:#111;
+padding:8px 13px;
+font-size:12px;
+font-weight:900;
+border-radius:30px;
+margin-bottom:20px;
+}
+h1{
+font-size:clamp(42px,7vw,78px);
+line-height:.92;
+letter-spacing:-4px;
+margin-bottom:25px;
+}
+.hero p{
+color:#ccc;
+font-size:18px;
+line-height:1.6;
+max-width:550px;
+}
+.btn{
+display:inline-block;
+background:#dfff00;
+color:#111;
+font-weight:900;
+padding:16px 24px;
+border-radius:6px;
+margin-top:28px;
+}
+.hero-card{
+background:linear-gradient(145deg,#272727,#111);
+border:1px solid #333;
+border-radius:20px;
+padding:45px 25px;
+text-align:center;
+}
+.hero-card .circle{
+width:220px;
+height:220px;
+margin:auto;
+border-radius:50%;
+background:#dfff00;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+font-weight:900;
+color:#111;
+}
+.section{
+max-width:1200px;
+margin:auto;
+padding:60px 20px;
+}
+.section-title{
+display:flex;
+justify-content:space-between;
+align-items:end;
+margin-bottom:30px;
+}
+.section-title h2{
+font-size:36px;
+letter-spacing:-2px;
+}
+.section-title p{color:#777}
+.categories{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+.cat{
+background:#111;
+color:#fff;
+padding:30px 20px;
+border-radius:12px;
+font-weight:900;
+min-height:120px;
+display:flex;
+align-items:end;
+}
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+.product{
+background:#fff;
+border-radius:14px;
+overflow:hidden;
+border:1px solid #e5e5e5;
+transition:.2s;
+}
+.product:hover{transform:translateY(-4px)}
+.product-img{
+height:220px;
+background:#eee;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:55px;
+font-weight:900;
+}
+.product-info{padding:18px}
+.brand{
+font-size:11px;
+font-weight:900;
+color:#777;
+text-transform:uppercase;
+}
+.product h3{
+font-size:17px;
+margin:8px 0;
+line-height:1.2;
+}
+.price{
+font-size:21px;
+font-weight:900;
+}
+.pix{
+font-size:12px;
+color:#159447;
+font-weight:700;
+margin-top:5px;
+}
+.buy{
+width:100%;
+border:0;
+background:#111;
+color:#fff;
+padding:13px;
+border-radius:6px;
+font-weight:900;
+margin-top:15px;
+cursor:pointer;
+}
+.buy:hover{background:#dfff00;color:#111}
+.benefits{
+background:#111;
+color:#fff;
+}
+.benefit-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+.benefit{
+border:1px solid #333;
+padding:25px;
+border-radius:12px;
+}
+.benefit strong{
+display:block;
+color:#dfff00;
+font-size:14px;
+margin-bottom:10px;
+}
+.benefit p{color:#bbb;font-size:14px;line-height:1.5}
+.news{
+background:#dfff00;
+border-radius:16px;
+padding:40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:30px;
+}
+.news h2{font-size:32px}
+.news input{
+padding:15px;
+border:0;
+border-radius:6px;
+width:250px;
+}
+.news button{
+padding:15px 20px;
+border:0;
+background:#111;
+color:#fff;
+font-weight:900;
+border-radius:6px;
+}
+footer{
+background:#111;
+color:#aaa;
+padding:45px 20px;
+}
+.footer-inner{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+gap:30px;
+}
+footer strong{color:#fff}
+.cart{
+position:fixed;
+right:20px;
+bottom:20px;
+z-index:30;
+background:#dfff00;
+color:#111;
+width:60px;height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+font-weight:900;
+box-shadow:0 5px 25px #0004;
+}
+#count{
+position:absolute;
+right:-2px;
+top:-3px;
+background:#111;
+color:#fff;
+width:20px;height:20px;
+border-radius:50%;
+font-size:11px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+@media(max-width:800px){
+.menu{display:none}
+.hero-inner{grid-template-columns:1fr}
+.hero-card{display:none}
+.categories{grid-template-columns:repeat(2,1fr)}
+.products{grid-template-columns:repeat(2,1fr);gap:12px}
+.product-img{height:160px}
+.benefit-grid{grid-template-columns:repeat(2,1fr)}
+.news{display:block}
+.news input{width:100%;margin-top:20px}
+.news button{margin-top:10px}
+.footer-inner{display:block}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="top">
+FRETE GRÁTIS A PARTIR DE €75 • PAGAMENTO SEGURO • PIX & CARTÃO
+</div>
+
+<div class="nav">
+<div class="logo">MUSCLE<span>TOP</span>EURO</div>
+
+<nav class="menu">
+<a href="#categorias">Categorias</a>
+<a href="#produtos">Mais vendidos</a>
+<a href="#ofertas">Ofertas</a>
+<a href="#marcas">Marcas</a>
+</nav>
+
+<div class="icons">
+<div class="icon">⌕</div>
+<div class="icon">♙</div>
+<div class="icon">🛒</div>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-inner">
+
+<div>
+<div class="badge">EUROPEAN PERFORMANCE NUTRITION</div>
+
+<h1>LEVANTE.<br>SUPERE.<br>EVOLUA.</h1>
+
+<p>
+Suplementos selecionados para quem leva performance a sério.
+Qualidade, praticidade e produtos premium em um só lugar.
+</p>
+
+<a class="btn" href="#produtos">EXPLORAR PRODUTOS →</a>
+</div>
+
+<div class="hero-card">
+<div class="circle">MTE</div>
+<h2 style="margin-top:25px">MUSCLETOPEURO</h2>
+<p style="margin-top:10px;color:#aaa">
+Performance Nutrition
+</p>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="categorias">
+
+<div class="section-title">
+<div>
+<h2>COMPRE POR OBJETIVO</h2>
+<p>Encontre o produto ideal para sua rotina.</p>
+</div>
+</div>
+
+<div class="categories">
+<a class="cat" href="#produtos">01<br>PROTEÍNAS</a>
+<a class="cat" href="#produtos">02<br>CREATINA</a>
+<a class="cat" href="#produtos">03<br>PERFORMANCE</a>
+<a class="cat" href="#produtos">04<br>ACESSÓRIOS</a>
+</div>
+
+</section>
+
+<section class="section" id="produtos">
+
+<div class="section-title">
+<div>
+<h2>MAIS VENDIDOS</h2>
+<p>Seleção MuscleTopEuro</p>
+</div>
+</div>
+
+<div class="products">
+
+<div class="product">
+<div class="product-img">CREA</div>
+<div class="product-info">
+<div class="brand">Performance</div>
+<h3>Creatine 100% Pure 500g</h3>
+<div class="price">€29,90</div>
+<div class="pix">Pagamento via Pix disponível</div>
+<button class="buy" onclick="addCart()">ADICIONAR AO CARRINHO</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-img">WHEY</div>
+<div class="product-info">
+<div class="brand">Premium Protein</div>
+<h3>Whey Protein Premium</h3>
+<div class="price">€39,90</div>
+<div class="pix">Pagamento via Pix disponível</div>
+<button class="buy" onclick="addCart()">ADICIONAR AO CARRINHO</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-img">PRE</div>
+<div class="product-info">
+<div class="brand">Performance</div>
+<h3>Pre-Workout Extreme</h3>
+<div class="price">€34,90</div>
+<div class="pix">Pagamento via Pix disponível</div>
+<button class="buy" onclick="addCart()">ADICIONAR AO CARRINHO</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-img">AMINO</div>
+<div class="product-info">
+<div class="brand">Recovery</div>
+<h3>Essential Aminos</h3>
+<div class="price">€27,90</div>
+<div class="pix">Pagamento via Pix disponível</div>
+<button class="buy" onclick="addCart()">ADICIONAR AO CARRINHO</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="benefits">
+
+<div class="section">
+
+<div class="benefit-grid">
+
+<div class="benefit">
+<strong>01 • COMPRA SEGURA</strong>
+<p>Checkout preparado para integração com Mercado Pago.</p>
+</div>
+
+<div class="benefit">
+<strong>02 • PIX INSTANTÂNEO</strong>
+<p>Pagamento via Pix será conectado ao checkout.</p>
+</div>
+
+<div class="benefit">
+<strong>03 • SELEÇÃO PREMIUM</strong>
+<p>Produtos escolhidos para performance e qualidade.</p>
+</div>
+
+<div class="benefit">
+<strong>04 • SUPORTE</strong>
+<p>Atendimento antes e depois da compra.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section" id="ofertas">
+
+<div class="news">
+<div>
+<h2>RECEBA NOSSAS OFERTAS</h2>
+<p style="margin-top:8px">Cadastre seu e-mail para receber novidades.</p>
+</div>
+
+<div>
+<input type="email" placeholder="Seu melhor e-mail">
+<button>CADASTRAR</button>
+</div>
+</div>
+
+</section>
+
+<footer id="marcas">
+
+<div class="footer-inner">
+<div>
+<strong>MUSCLETOPEURO</strong>
+<p style="margin-top:10px">Performance Nutrition</p>
+</div>
+
+<div>
+<p>Pagamento seguro</p>
+<p>Pix • Cartão</p>
+</div>
+
+<div>
+<p>Atendimento</p>
+<p>Segunda a sexta</p>
+</div>
+</div>
+
+<p style="text-align:center;margin-top:35px;font-size:12px">
+© 2026 MuscleTopEuro. Todos os direitos reservados.
+</p>
+
+</footer>
+
+<div class="cart">
+🛒
+<span id="count">0</span>
+</div>
+
+<script>
+let cart=0;
+
+function addCart(){
+cart++;
+document.getElementById("count").innerText=cart;
+alert("Produto adicionado ao carrinho!");
+}
+</script>
+
+</body>
+</html>
